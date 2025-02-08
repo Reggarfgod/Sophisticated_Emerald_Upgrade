@@ -104,11 +104,10 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
 
     //sophisticated core
-    implementation "curse.maven:sophisticated-core-618298:6158121"
+    implementation "curse.maven:sophisticated-core-618298:6160815"
 
     // sophisticated backpack
-    implementation "curse.maven:sophisticated-backpacks-422301:6093515"
-
+    implementation "curse.maven:sophisticated-backpacks-422301:6157673"
     //sophisticated storage
     implementation "curse.maven:sophisticated-storage-619320:6168774"
 

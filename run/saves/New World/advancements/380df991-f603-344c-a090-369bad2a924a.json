@@ -48,24 +48,6 @@
     },
     "done": true
   },
-  "sophisticatedbackpacks:recipes/misc/stack_upgrade_tier_4": {
-    "criteria": {
-      "has_upgrade_base": "2025-02-08 00:01:35 +0530"
-    },
-    "done": true
-  },
-  "sophisticatedbackpacks:recipes/misc/stack_upgrade_tier_3": {
-    "criteria": {
-      "has_upgrade_base": "2025-02-08 00:01:38 +0530"
-    },
-    "done": true
-  },
-  "sophisticatedbackpacks:recipes/misc/stack_upgrade_tier_2": {
-    "criteria": {
-      "has_upgrade_base": "2025-02-08 00:01:52 +0530"
-    },
-    "done": true
-  },
   "sophisticatedstorage:recipes/misc/storage_stack_upgrade_tier_1_plus_from_backpack_stack_upgrade_starter_tier": {
     "criteria": {
       "has_backpack_stack_upgrade": "2025-02-08 02:30:36 +0530"
@@ -123,6 +105,12 @@
   "sophisticated_emerald_upgrade:recipes/misc/stack_upgrade_tier_sb_5": {
     "criteria": {
       "has_stack_upgrade_tier_4": "2025-02-08 11:52:29 +0530"
+    },
+    "done": true
+  },
+  "sophisticatedbackpacks:recipes/misc/stack_upgrade_omega_tier": {
+    "criteria": {
+      "has_stack_upgrade_tier_4": "2025-02-08 13:59:50 +0530"
     },
     "done": true
   },
