@@ -18,7 +18,7 @@ public class ModCreativeModeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.STACK_UPGRADE_TIER_SB_5.get());
                 output.accept(ModItems.STACK_UPGRADE_TIER_SS_6.get());
-                //output.accept(ModItems.EMERALD_BACKPACK.get());
+
 
             }).build());
 

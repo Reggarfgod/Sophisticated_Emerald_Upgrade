@@ -1,9 +1,7 @@
 package com.reggarf.mods.sophisticated_emerald_upgrade;
 
 import com.mojang.logging.LogUtils;
-//import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModBlocks;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModCreativeModeTabs;
-//import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModEntities;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
@@ -26,42 +24,24 @@ import org.slf4j.Logger;
 public class Sophisticated_emerald_upgrade {
 
     public static final String MODID = "sophisticated_emerald_upgrade";
-
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "backpack_allthemodium_upgrade" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Sophisticated_emerald_upgrade(IEventBus modEventBus, ModContainer modContainer) {
 
-
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
-
         ModCreativeModeTabs.register(modEventBus);
-
         ModItems.register(modEventBus);
-        //ModBlocks.register(modEventBus);
-       // ModEntities.register(modEventBus);
-        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
 
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
-
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
     }
-
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
