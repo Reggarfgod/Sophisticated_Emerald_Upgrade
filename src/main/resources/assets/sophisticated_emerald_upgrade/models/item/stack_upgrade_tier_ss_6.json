@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "sophisticated_emerald_upgrade:item/stack_upgrade_tier_ss_6"
+  }
+}

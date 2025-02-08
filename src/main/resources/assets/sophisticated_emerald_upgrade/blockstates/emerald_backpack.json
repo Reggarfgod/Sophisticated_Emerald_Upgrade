@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "sophisticated_emerald_upgrade:block/emerald_backpack",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "sophisticated_emerald_upgrade:block/emerald_backpack"
+        },
+        "facing=south": {
+            "model": "sophisticated_emerald_upgrade:block/emerald_backpack",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "sophisticated_emerald_upgrade:block/emerald_backpack",
+            "y": 270
+        }
+    }
+}
