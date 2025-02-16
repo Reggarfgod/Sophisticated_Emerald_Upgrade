@@ -1,0 +1,21 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-02-16 10:48:37 +0530"
+    },
+    "done": true
+  },
+  "sophisticatedstorage:recipes/misc/iron_barrel_from_copper_barrel": {
+    "criteria": {
+      "has_copper_barrel": "2025-02-16 10:48:48 +0530"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:sparse_jungle": "2025-02-16 10:48:38 +0530"
+    },
+    "done": false
+  },
+  "DataVersion": 3955
+}
