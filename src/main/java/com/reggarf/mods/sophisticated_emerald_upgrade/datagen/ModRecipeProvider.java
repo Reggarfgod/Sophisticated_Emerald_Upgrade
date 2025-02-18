@@ -41,6 +41,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Tags.Items.STORAGE_BLOCKS_EMERALD)
                 .unlockedBy("has_stack_upgrade_tier_4", has(net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_5.get())).save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,
+                        ModItems.STACK_UPGRADE_TIER_SBS_7.get())
+                .pattern("CCC")
+                .pattern("DCG")
+                .pattern("BCB")
+                .define('D', ModItems.STACK_UPGRADE_TIER_SB_5.get())
+                .define('G', ModItems.STACK_UPGRADE_TIER_SS_6.get())
+                .define('C', Tags.Items.GEMS_EMERALD)
+                .define('B', Tags.Items.STORAGE_BLOCKS_EMERALD)
+                .unlockedBy("stack_upgrade_tier_ss_6", has(ModItems.STACK_UPGRADE_TIER_SS_6.get())).save(recipeOutput);
 
     }
 

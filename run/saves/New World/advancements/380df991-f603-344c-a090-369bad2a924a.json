@@ -5,17 +5,35 @@
     },
     "done": true
   },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:sparse_jungle": "2025-02-16 10:48:38 +0530"
+    },
+    "done": false
+  },
   "sophisticatedstorage:recipes/misc/iron_barrel_from_copper_barrel": {
     "criteria": {
       "has_copper_barrel": "2025-02-16 10:48:48 +0530"
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
+  "minecraft:end/elytra": {
     "criteria": {
-      "minecraft:sparse_jungle": "2025-02-16 10:48:38 +0530"
+      "elytra": "2025-02-16 22:49:28 +0530"
     },
-    "done": false
+    "done": true
+  },
+  "sophisticated_emerald_upgrade:recipes/misc/stack_upgrade_tier_sbs_7": {
+    "criteria": {
+      "stack_upgrade_tier_ss_6": "2025-02-18 11:24:03 +0530"
+    },
+    "done": true
+  },
+  "sophisticatedstorage:recipes/misc/netherite_barrel": {
+    "criteria": {
+      "has_diamond_barrel": "2025-02-18 11:24:42 +0530"
+    },
+    "done": true
   },
   "DataVersion": 3955
 }

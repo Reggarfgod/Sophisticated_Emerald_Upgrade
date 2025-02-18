@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/emerald"
+    },
+    "C": {
+      "tag": "c:gems/emerald"
+    },
+    "D": {
+      "item": "sophisticated_emerald_upgrade:stack_upgrade_tier_sb_5"
+    },
+    "G": {
+      "item": "sophisticated_emerald_upgrade:stack_upgrade_tier_ss_6"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "DCG",
+    "BCB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sophisticated_emerald_upgrade:stack_upgrade_tier_sbs_7"
+  }
+}

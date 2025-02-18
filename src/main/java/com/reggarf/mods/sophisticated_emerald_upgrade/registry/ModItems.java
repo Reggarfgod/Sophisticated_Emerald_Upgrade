@@ -19,6 +19,9 @@ public class ModItems {
     public static final DeferredHolder<Item, StackUpgradeItem> STACK_UPGRADE_TIER_SS_6 = ITEMS.register("stack_upgrade_tier_ss_6", () ->
             new StackUpgradeItem(48, net.p3pp3rf1y.sophisticatedstorage.Config.SERVER.maxUpgradesPerStorage));
 
+    public static final DeferredHolder<Item, StackUpgradeItem> STACK_UPGRADE_TIER_SBS_7 = ITEMS.register("stack_upgrade_tier_sbs_7", () ->
+            new StackUpgradeItem(128, net.p3pp3rf1y.sophisticatedstorage.Config.SERVER.maxUpgradesPerStorage));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
