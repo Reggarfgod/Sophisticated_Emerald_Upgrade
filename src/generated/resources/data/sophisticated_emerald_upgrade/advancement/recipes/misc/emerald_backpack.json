@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stack_upgrade_tier_ss_6": {
+    "has_diamond_backpack": {
       "conditions": {
         "items": [
           {
-            "items": "sophisticated_emerald_upgrade:stack_upgrade_tier_ss_6"
+            "items": "sophisticatedbackpacks:diamond_backpack"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sophisticated_emerald_upgrade:stack_upgrade_tier_sbs_7"
+        "recipe": "sophisticated_emerald_upgrade:emerald_backpack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_stack_upgrade_tier_ss_6"
+      "has_diamond_backpack"
     ]
   ],
   "rewards": {
     "recipes": [
-      "sophisticated_emerald_upgrade:stack_upgrade_tier_sbs_7"
+      "sophisticated_emerald_upgrade:emerald_backpack"
     ]
   }
 }

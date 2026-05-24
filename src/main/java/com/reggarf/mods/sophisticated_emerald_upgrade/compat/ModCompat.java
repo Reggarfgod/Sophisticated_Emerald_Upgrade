@@ -24,8 +24,8 @@ public class ModCompat {
     public static final DeferredHolder<Item, BackpackItem> EMERALD_BACKPACK =
             ITEMS.register("emerald_backpack",
                     () -> new BackpackItem(
-                            () -> 108,
-                            () -> 8,
+                            () -> 132,
+                            () -> 9,
                             EMERALD_BACKPACK_BLOCK
                     ));
 }
