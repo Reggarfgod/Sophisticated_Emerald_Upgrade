@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sophisticated_emerald_upgrade:item/emerald_upgrade_template"
+  }
+}

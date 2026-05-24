@@ -1,6 +1,7 @@
 package com.reggarf.mods.sophisticated_emerald_upgrade;
 
 import com.mojang.logging.LogUtils;
+import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModCreativeModeTabs;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -33,6 +34,9 @@ public class Sophisticated_emerald_upgrade {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         modEventBus.addListener(this::addCreative);
+
+        ModCompat.BLOCKS.register(modEventBus);
+        ModCompat.ITEMS.register(modEventBus);
 
     }
     private void commonSetup(final FMLCommonSetupEvent event) {

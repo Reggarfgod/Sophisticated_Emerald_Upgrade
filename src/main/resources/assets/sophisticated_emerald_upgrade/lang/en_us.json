@@ -5,5 +5,12 @@
   "item.sophisticated_emerald_upgrade.stack_upgrade_tier_sbs_7": "Stack Upgrade Tier 7",
   "item.sophisticated_emerald_upgrade.stack_upgrade_tier_sb_5.tooltip": "Multiplies the number of stacks that can fit in a slot by 48",
   "item.sophisticated_emerald_upgrade.stack_upgrade_tier_ss_6.tooltip": "Multiplies the number of stacks that can fit in a slot by 48",
-  "item.sophisticated_emerald_upgrade.stack_upgrade_tier_sbs_7.tooltip": "Multiplies the number of stacks that can fit in a slot by 128 And this stack upgrade work's for both backpacks/storages"
+  "item.sophisticated_emerald_upgrade.stack_upgrade_tier_sbs_7.tooltip": "Multiplies the number of stacks that can fit in a slot by 128 And this stack upgrade work's for both backpacks/storages",
+ 
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template": "Emerald Upgrade Template",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.applies_to": "Backpack Upgrades",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.ingredients": "Emerald Materials",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.title": "Emerald Upgrade",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.base_slot_description": "Insert Backpack",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.additions_slot_description": "Insert Emerald Material"
 }

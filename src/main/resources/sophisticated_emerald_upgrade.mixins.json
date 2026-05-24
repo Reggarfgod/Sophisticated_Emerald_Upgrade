@@ -5,6 +5,15 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "sophisticated_emerald_upgrade.refmap.json",
   "mixins": [
+    "color.ModItemColorsMixin",
+    "color.ModBlockColorsMixin",
+    "item.ModItemsMixin",
+    "client.ClientBackpackShapeProviderMixin",
+    "client.ClientEventHandlerMixin",
+    "block.BackpackBlockEntityTypeMixin",
+    "curios.CuriosCompatClientMixin",
+    "curios.CuriosCompatMixin",
+    "curios.BackpackCurioRendererMixin"
   ],
   "client": [
   ],

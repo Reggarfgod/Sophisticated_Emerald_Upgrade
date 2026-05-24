@@ -3,7 +3,11 @@ package com.reggarf.mods.sophisticated_emerald_upgrade.registry;
 
 import com.reggarf.mods.sophisticated_emerald_upgrade.Sophisticated_emerald_upgrade;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SmithingTemplateItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -21,6 +25,18 @@ public class ModItems {
 
     public static final DeferredHolder<Item, StackUpgradeItem> STACK_UPGRADE_TIER_SBS_7 = ITEMS.register("stack_upgrade_tier_sbs_7", () ->
             new StackUpgradeItem(128, net.p3pp3rf1y.sophisticatedstorage.Config.SERVER.maxUpgradesPerStorage));
+
+    public static final DeferredHolder<Item, SmithingTemplateItem> EMERALD_UPGRADE_TEMPLATE =
+            ITEMS.register(
+                    "emerald_upgrade_template",
+                    () -> SmithingTemplateItem.createArmorTrimTemplate(
+                           ResourceKey.create(Registries.TRIM_PATTERN,
+                                    ResourceLocation.fromNamespaceAndPath(Sophisticated_emerald_upgrade.MODID,
+                                            "emerald"
+                                    )
+                            )
+                    )
+            );
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
