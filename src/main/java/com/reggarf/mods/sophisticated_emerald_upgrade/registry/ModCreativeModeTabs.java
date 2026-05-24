@@ -27,6 +27,13 @@ public class ModCreativeModeTabs {
                             .displayItems((parameters, output) -> {
 
                                 output.accept(ModCompat.EMERALD_BACKPACK.get());
+                                output.accept(ModCompat.EMERALD_BARREL_ITEM.get());
+                                output.accept(ModCompat.EMERALD_CHEST_ITEM.get());
+                                output.accept(ModCompat.EMERALD_SHULKER_BOX_ITEM.get());
+                                output.accept(ModCompat.EMERALD_LIMITED_BARREL_1_ITEM.get());
+                                output.accept(ModCompat.EMERALD_LIMITED_BARREL_2_ITEM.get());
+                                output.accept(ModCompat.EMERALD_LIMITED_BARREL_3_ITEM.get());
+                                output.accept(ModCompat.EMERALD_LIMITED_BARREL_4_ITEM.get());
                                 output.accept(ModItems.EMERALD_UPGRADE_TEMPLATE.get());
                                 output.accept(ModItems.STACK_UPGRADE_TIER_SB_5.get());
                                 output.accept(ModItems.STACK_UPGRADE_TIER_SS_6.get());

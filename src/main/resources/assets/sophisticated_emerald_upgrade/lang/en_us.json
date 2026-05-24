@@ -14,5 +14,11 @@
   "item.sophisticated_emerald_upgrade.emerald_upgrade_template.base_slot_description": "Insert Backpack",
   "item.sophisticated_emerald_upgrade.emerald_upgrade_template.additions_slot_description": "Insert Emerald Material",
   "trim_pattern.sophisticated_emerald_upgrade.emerald": "Emerald Upgrade",
-  "item.sophisticatedbackpacks.emerald_backpack": "Emerald Backpack"
+  "item.sophisticatedbackpacks.emerald_backpack": "Emerald Backpack",
+
+  "block.sophisticatedstorage.emerald_barrel": "Emerald Barrel",
+  "block.sophisticatedstorage.emerald_chest": "Emerald Chest",
+  "block.sophisticatedstorage.emerald_shulker_box": "Emerald Shulker Box",
+  "block.sophisticatedstorage.emerald_limited_barrel_1": "Emerald Limited Barrel"
+
 }

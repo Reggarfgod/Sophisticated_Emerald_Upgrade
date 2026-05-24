@@ -1,0 +1,89 @@
+package com.reggarf.mods.sophisticated_emerald_upgrade.mixin.color;
+
+import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.p3pp3rf1y.sophisticatedstorage.client.init.ModItemColors;
+import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
+import net.p3pp3rf1y.sophisticatedstorage.item.StorageBlockItem;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+
+@Mixin(ModItemColors.class)
+public class StorageItemColorsMixin {
+
+    /**
+     * @author Reggarf
+     * @reason Add Emerald Storage items
+     */
+    @Overwrite
+    public static void registerItemColorHandlers(
+            RegisterColorHandlersEvent.Item event
+    ) {
+
+        event.register((stack, tintIndex) -> {
+
+                    if (tintIndex < 1000
+                            || tintIndex > 1001) {
+                        return -1;
+                    }
+
+                    if (tintIndex == 1000) {
+                        return StorageBlockItem
+                                .getMainColorFromComponentHolder(stack)
+                                .orElse(-1);
+
+                    } else {
+
+                        return StorageBlockItem
+                                .getAccentColorFromComponentHolder(stack)
+                                .orElse(-1);
+                    }
+                },
+
+                ModBlocks.BARREL_ITEM.get(),
+                ModBlocks.COPPER_BARREL_ITEM.get(),
+                ModBlocks.IRON_BARREL_ITEM.get(),
+                ModBlocks.GOLD_BARREL_ITEM.get(),
+                ModBlocks.DIAMOND_BARREL_ITEM.get(),
+                ModBlocks.NETHERITE_BARREL_ITEM.get(),
+
+                ModCompat.EMERALD_BARREL_ITEM.get(),
+
+                ModBlocks.LIMITED_BARREL_1_ITEM.get(),
+                ModBlocks.LIMITED_COPPER_BARREL_1_ITEM.get(),
+                ModBlocks.LIMITED_IRON_BARREL_1_ITEM.get(),
+                ModBlocks.LIMITED_GOLD_BARREL_1_ITEM.get(),
+                ModBlocks.LIMITED_DIAMOND_BARREL_1_ITEM.get(),
+                ModBlocks.LIMITED_NETHERITE_BARREL_1_ITEM.get(),
+
+                ModCompat.EMERALD_LIMITED_BARREL_1_ITEM.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_2_ITEM.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_3_ITEM.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_4_ITEM.get(),
+
+                ModBlocks.LIMITED_BARREL_2_ITEM.get(),
+                ModBlocks.LIMITED_COPPER_BARREL_2_ITEM.get(),
+                ModBlocks.LIMITED_IRON_BARREL_2_ITEM.get(),
+                ModBlocks.LIMITED_GOLD_BARREL_2_ITEM.get(),
+                ModBlocks.LIMITED_DIAMOND_BARREL_2_ITEM.get(),
+                ModBlocks.LIMITED_NETHERITE_BARREL_2_ITEM.get(),
+
+                ModBlocks.LIMITED_BARREL_3_ITEM.get(),
+                ModBlocks.LIMITED_COPPER_BARREL_3_ITEM.get(),
+                ModBlocks.LIMITED_IRON_BARREL_3_ITEM.get(),
+                ModBlocks.LIMITED_GOLD_BARREL_3_ITEM.get(),
+                ModBlocks.LIMITED_DIAMOND_BARREL_3_ITEM.get(),
+                ModBlocks.LIMITED_NETHERITE_BARREL_3_ITEM.get(),
+
+                ModBlocks.LIMITED_BARREL_4_ITEM.get(),
+                ModBlocks.LIMITED_COPPER_BARREL_4_ITEM.get(),
+                ModBlocks.LIMITED_IRON_BARREL_4_ITEM.get(),
+                ModBlocks.LIMITED_GOLD_BARREL_4_ITEM.get(),
+                ModBlocks.LIMITED_DIAMOND_BARREL_4_ITEM.get(),
+                ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get(),
+
+                ModCompat.EMERALD_CHEST_ITEM.get(),
+                ModCompat.EMERALD_SHULKER_BOX_ITEM.get()
+        );
+    }
+}

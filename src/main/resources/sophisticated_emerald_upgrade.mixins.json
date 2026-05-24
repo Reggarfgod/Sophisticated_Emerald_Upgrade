@@ -13,7 +13,10 @@
     "block.BackpackBlockEntityTypeMixin",
     "curios.CuriosCompatClientMixin",
     "curios.CuriosCompatMixin",
-    "curios.BackpackCurioRendererMixin"
+    "curios.BackpackCurioRendererMixin",
+    "color.StorageItemColorsMixin",
+    "color.StorageBlockColorsMixin",
+    "block.StorageBlockEntityTypeMixin"
   ],
   "client": [
   ],
