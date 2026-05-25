@@ -1,0 +1,20 @@
+{
+  "type": "chest",
+  "textures": {
+
+    "single": {
+      "base": "sophisticatedstorage:entity/chest/acacia",
+      "emerald_tier": "sophisticated_emerald_upgrade:entity/chest/emerald_tier"
+    },
+
+    "left": {
+      "base": "sophisticatedstorage:entity/chest/left_acacia",
+      "emerald_tier": "sophisticated_emerald_upgrade:entity/chest/left_emerald_tier"
+    },
+
+    "right": {
+      "base": "sophisticatedstorage:entity/chest/right_acacia",
+      "emerald_tier": "sophisticated_emerald_upgrade:entity/chest/right_emerald_tier"
+    }
+  }
+}

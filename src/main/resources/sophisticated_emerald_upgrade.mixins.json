@@ -16,9 +16,13 @@
     "curios.BackpackCurioRendererMixin",
     "color.StorageItemColorsMixin",
     "color.StorageBlockColorsMixin",
-    "block.StorageBlockEntityTypeMixin"
+    "block.StorageBlockEntityTypeMixin",
+    "render.EmeraldClientRenderMixin",
+    "client.texture.ChestRendererMixin",
+    "client.texture.ShulkerBoxRendererMixin"
   ],
   "client": [
+
   ],
   "injectors": {
     "defaultRequire": 1

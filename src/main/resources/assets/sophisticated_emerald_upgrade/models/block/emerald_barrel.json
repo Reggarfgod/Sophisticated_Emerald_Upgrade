@@ -1,0 +1,15 @@
+{
+    "loader": "sophisticatedstorage:barrel",
+    "parent": "sophisticatedstorage:block/barrel",
+    "flat_top_model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel",
+    "model_parts": {
+        "tier": {
+            "textures": {
+                "top": "sophisticated_emerald_upgrade:block/emerald_barrel_top",
+                "side": "sophisticated_emerald_upgrade:block/emerald_barrel_side",
+                "bottom": "sophisticated_emerald_upgrade:block/emerald_barrel_bottom",
+                "top_trim": "sophisticated_emerald_upgrade:block/emerald_barrel_top"
+            }
+        }
+    }
+}

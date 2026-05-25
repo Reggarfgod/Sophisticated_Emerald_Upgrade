@@ -169,5 +169,236 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         recipeOutput,
                         "sophisticated_emerald_upgrade:emerald_backpack"
                 );
+
+        /*
+         * EMERALD BARREL
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.NETHERITE_BARREL_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_BARREL_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_netherite_barrel",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.NETHERITE_BARREL_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_barrel"
+                );
+
+        /*
+         * EMERALD LIMITED BARREL 1
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_1_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_LIMITED_BARREL_1_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_limited_netherite_barrel_1",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_1_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_limited_barrel_1"
+                );
+
+        /*
+         * EMERALD LIMITED BARREL 2
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_2_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_LIMITED_BARREL_2_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_limited_netherite_barrel_2",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_2_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_limited_barrel_2"
+                );
+
+        /*
+         * EMERALD LIMITED BARREL 3
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_3_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_LIMITED_BARREL_3_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_limited_netherite_barrel_3",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_3_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_limited_barrel_3"
+                );
+
+        /*
+         * EMERALD LIMITED BARREL 4
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_LIMITED_BARREL_4_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_limited_netherite_barrel_4",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_limited_barrel_4"
+                );
+
+        /*
+         * EMERALD CHEST
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.NETHERITE_CHEST_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_CHEST_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_netherite_chest",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.NETHERITE_CHEST_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_chest"
+                );
+
+        /*
+         * EMERALD SHULKER BOX
+         */
+        SmithingTransformRecipeBuilder
+                .smithing(
+
+                        Ingredient.of(
+                                ModItems.EMERALD_UPGRADE_TEMPLATE.get()
+                        ),
+
+                        Ingredient.of(
+                                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.NETHERITE_SHULKER_BOX_ITEM.get()
+                        ),
+
+                        Ingredient.of(
+                                Tags.Items.STORAGE_BLOCKS_EMERALD
+                        ),
+
+                        RecipeCategory.DECORATIONS,
+
+                        ModCompat.EMERALD_SHULKER_BOX_ITEM.get()
+                )
+
+                .unlocks(
+                        "has_netherite_shulker_box",
+                        has(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.NETHERITE_SHULKER_BOX_ITEM.get())
+                )
+
+                .save(
+                        recipeOutput,
+                        "sophisticated_emerald_upgrade:emerald_shulker_box"
+                );
     }
 }

@@ -1,0 +1,56 @@
+{
+    "variants": {
+        "facing=down,flat_top=false": {
+            "x": 180,
+            "model": "sophisticated_emerald_upgrade:block/emerald_barrel"
+        },
+        "facing=east,flat_top=false": {
+            "x": 90,
+            "y": 90,
+            "model": "sophisticated_emerald_upgrade:block/emerald_barrel"
+        },
+        "facing=north,flat_top=false": {
+            "x": 90,
+            "model": "sophisticated_emerald_upgrade:block/emerald_barrel"
+        },
+        "facing=south,flat_top=false": {
+            "x": 90,
+            "y": 180,
+            "model": "sophisticated_emerald_upgrade:block/emerald_barrel"
+        },
+        "facing=up,flat_top=false": {
+            "model": "sophisticated_emerald_upgrade:block/emerald_barrel"
+        },
+        "facing=west,flat_top=false": {
+            "x": 90,
+            "y": 270,
+            "model": "sophisticated_emerald_upgrade:block/emerald_barrel"
+        },
+        "facing=down,flat_top=true": {
+            "x": 180,
+            "model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel"
+        },
+        "facing=east,flat_top=true": {
+            "x": 90,
+            "y": 90,
+            "model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel"
+        },
+        "facing=north,flat_top=true": {
+            "x": 90,
+            "model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel"
+        },
+        "facing=south,flat_top=true": {
+            "x": 90,
+            "y": 180,
+            "model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel"
+        },
+        "facing=up,flat_top=true": {
+            "model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel"
+        },
+        "facing=west,flat_top=true": {
+            "x": 90,
+            "y": 270,
+            "model": "sophisticated_emerald_upgrade:block/flat/emerald_barrel"
+        }
+    }
+}

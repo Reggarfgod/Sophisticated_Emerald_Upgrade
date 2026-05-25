@@ -33,7 +33,7 @@ public class ModCompat {
             ITEMS.register("emerald_backpack",
                     () -> new BackpackItem(
                             () -> 132,
-                            () -> 9,
+                            () -> 8,
                             EMERALD_BACKPACK_BLOCK
                     ));
 
@@ -41,8 +41,8 @@ public class ModCompat {
             EMERALD_BARREL = BLOCKS.register(
                     "emerald_barrel",
                     () -> new BarrelBlock(
-                            () -> 162,
-                            () -> 8,
+                            () -> 168,
+                            () -> 7,
                             0
                     )
             );
@@ -63,7 +63,7 @@ public class ModCompat {
                     () -> new LimitedBarrelBlock(
                             1,
                             () -> 128,
-                            () -> 8,
+                            () -> 7,
                             0
                     )
             );
@@ -83,7 +83,7 @@ public class ModCompat {
             () -> new LimitedBarrelBlock(
                     2,
                     () -> 128,
-                    () -> 8,
+                    () -> 7,
                     0
             )
     );
@@ -104,7 +104,7 @@ public class ModCompat {
             () -> new LimitedBarrelBlock(
                     3,
                     () -> 128,
-                    () -> 8,
+                    () -> 7,
                     0
             )
     );
@@ -125,7 +125,7 @@ public class ModCompat {
             () -> new LimitedBarrelBlock(
                     4,
                     () -> 128,
-                    () -> 8,
+                    () -> 7,
                     0
             )
     );
@@ -143,8 +143,8 @@ public class ModCompat {
             EMERALD_CHEST = BLOCKS.register(
                     "emerald_chest",
                     () -> new ChestBlock(
-                            () -> 162,
-                            () -> 8
+                            () -> 168,
+                            () -> 7
                     )
             );
 
@@ -162,8 +162,8 @@ public class ModCompat {
             EMERALD_SHULKER_BOX = BLOCKS.register(
                     "emerald_shulker_box",
                     () -> new ShulkerBoxBlock(
-                            () -> 162,
-                            () -> 8
+                            () -> 168,
+                            () -> 7
                     )
             );
 

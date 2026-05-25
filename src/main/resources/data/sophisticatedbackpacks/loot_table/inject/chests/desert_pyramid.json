@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:chest",
+
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+
+      "entries": [
+
+        {
+          "type": "minecraft:item",
+
+          "name": "sophisticated_emerald_upgrade:emerald_upgrade_template",
+
+          "weight": 20
+        },
+
+        {
+          "type": "minecraft:empty",
+
+          "weight": 89
+        }
+      ],
+
+      "name": "main",
+
+      "rolls": 1.0
+    }
+  ],
+
+  "random_sequence": "sophisticated_emerald_upgrade:inject/chests/end_city_treasure"
+}
