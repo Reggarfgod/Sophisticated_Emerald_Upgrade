@@ -3,7 +3,8 @@ package com.reggarf.mods.sophisticated_emerald_upgrade.compat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -22,7 +23,7 @@ public class EmeraldBackpackCauldronInteraction implements CauldronInteraction {
     }
 
     @Override
-    public ItemInteractionResult interact(
+    public InteractionResult interact(
             BlockState state,
             Level level,
             BlockPos pos,
@@ -35,10 +36,10 @@ public class EmeraldBackpackCauldronInteraction implements CauldronInteraction {
                 BackpackWrapper.fromStack(stack);
 
         if (hasDefaultColor(backpackWrapper)) {
-            return ItemInteractionResult.FAIL;
+            return InteractionResult.FAIL;
         }
 
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
 
             backpackWrapper.setColors(
                     BackpackWrapper.DEFAULT_MAIN_COLOR,
@@ -48,6 +49,8 @@ public class EmeraldBackpackCauldronInteraction implements CauldronInteraction {
             LayeredCauldronBlock.lowerFillLevel(state, level, pos);
         }
 
-        return ItemInteractionResult.sidedSuccess(level.isClientSide);
+        return level.isClientSide()
+                ? InteractionResult.SUCCESS
+                : InteractionResult.SUCCESS_SERVER;
     }
 }

@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "type": "neoforge:namespaced_directory",
+      "namespace": "sophisticated_emerald_upgrade",
+      "source": "entity/shulker_box",
+      "prefix": "entity/shulker_box/"
+    }
+  ]
+}

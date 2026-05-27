@@ -2,14 +2,13 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'idea'
-    id 'net.neoforged.moddev' version '2.0.77'
+    id 'net.neoforged.moddev' version '2.0.141'
 }
 
 version = mod_version
 group = mod_group_id
 
 repositories {
-    mavenLocal()
     maven {
         url "https://cursemaven.com"
         content {
@@ -61,7 +60,7 @@ neoForge {
         }
 
         data {
-            data()
+            clientData()
 
             // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
             // gameDirectory = project.file('run-data')
@@ -101,33 +100,22 @@ neoForge {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 
+
 dependencies {
 
     //sophisticated core
-    implementation "curse.maven:sophisticated-core-618298:8125225"
+    implementation "curse.maven:sophisticated-core-618298:8145739"
 
     // sophisticated backpack
-    implementation "curse.maven:sophisticated-backpacks-422301:8130118"
+    implementation "curse.maven:sophisticated-backpacks-422301:8136846"
     //sophisticated storage
-    implementation "curse.maven:sophisticated-storage-619320:8128967"
+    implementation "curse.maven:sophisticated-storage-619320:8137313"
 
     // curios
-    implementation "curse.maven:curios-continuation-1037991:5888964"
+    implementation "curse.maven:curios-309927:7642217"
 
     // jei
-    implementation "curse.maven:jei-238222:5846880"
-
-    //
-
-    // Example mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // compileOnly "mezz.jei:jei-${mc_version}-forge-api:${jei_version}"
-    // runtimeOnly "mezz.jei:jei-${mc_version}-forge:${jei_version}"
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
+    implementation "curse.maven:jei-238222:7850285"
 
 }
 

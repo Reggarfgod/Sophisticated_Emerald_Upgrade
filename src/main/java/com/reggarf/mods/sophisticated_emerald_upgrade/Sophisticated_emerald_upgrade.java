@@ -39,6 +39,7 @@ public class Sophisticated_emerald_upgrade {
         ModCompat.ITEMS.register(modEventBus);
 
     }
+    
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
@@ -53,7 +54,7 @@ public class Sophisticated_emerald_upgrade {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

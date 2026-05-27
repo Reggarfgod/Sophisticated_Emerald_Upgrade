@@ -1,6 +1,8 @@
 package com.reggarf.mods.sophisticated_emerald_upgrade.mixin.curios;
 
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.minecraft.world.entity.player.Player;
 import net.p3pp3rf1y.sophisticatedbackpacks.compat.curios.CuriosCompat;
 import org.spongepowered.asm.mixin.Final;
@@ -9,7 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.CuriosSlotTypes;
 
 import java.util.Set;
 
@@ -22,7 +24,8 @@ public class CuriosCompatMixin {
 
     @Inject(
             method = "getCurioTags",
-            at = @At("TAIL")
+            at = @At("TAIL"),
+            remap = false
     )
     private void addEmeraldBackpackTags(
             Player player,
@@ -30,10 +33,17 @@ public class CuriosCompatMixin {
     ) {
 
         backpackCurioIdentifiers.addAll(
-                CuriosApi.getItemStackSlots(
-                        ModCompat.EMERALD_BACKPACK.get().getDefaultInstance(),
-                        true
+
+                CuriosSlotTypes.getItemSlotTypes(
+
+                        ModCompat.EMERALD_BACKPACK.get()
+                                .getDefaultInstance(),
+
+                        FMLEnvironment.getDist() == Dist.CLIENT
+
                 ).keySet()
         );
+
+        backpackCurioIdentifiers.add("curio");
     }
 }

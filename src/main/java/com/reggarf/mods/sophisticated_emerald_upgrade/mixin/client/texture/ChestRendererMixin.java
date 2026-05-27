@@ -1,15 +1,11 @@
 package com.reggarf.mods.sophisticated_emerald_upgrade.mixin.client.texture;
 
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.resources.model.Material;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.ChestType;
-import net.minecraft.client.renderer.Sheets;
-import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -71,7 +67,7 @@ public class ChestRendererMixin {
         return new Material(
                 Sheets.CHEST_SHEET,
 
-                ResourceLocation.fromNamespaceAndPath(
+                Identifier.fromNamespaceAndPath(
                         "sophisticated_emerald_upgrade",
                         texture
                 )

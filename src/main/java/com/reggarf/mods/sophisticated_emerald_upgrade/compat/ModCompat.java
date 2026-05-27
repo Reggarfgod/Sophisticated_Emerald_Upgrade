@@ -9,170 +9,178 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.p3pp3rf1y.sophisticatedbackpacks.SophisticatedBackpacks;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlock;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
+import net.p3pp3rf1y.sophisticatedstorage.Config;
 import net.p3pp3rf1y.sophisticatedstorage.block.BarrelBlock;
 import net.p3pp3rf1y.sophisticatedstorage.block.ChestBlock;
 import net.p3pp3rf1y.sophisticatedstorage.block.LimitedBarrelBlock;
 import net.p3pp3rf1y.sophisticatedstorage.block.ShulkerBoxBlock;
 import net.p3pp3rf1y.sophisticatedstorage.item.BarrelBlockItem;
 import net.p3pp3rf1y.sophisticatedstorage.item.ChestBlockItem;
+import net.p3pp3rf1y.sophisticatedstorage.item.LimitedBarrelBlockItem;
 import net.p3pp3rf1y.sophisticatedstorage.item.ShulkerBoxItem;
+
+import java.util.function.Supplier;
 
 public class ModCompat {
 
-    public static final DeferredRegister<Block> BLOCKS =
+    public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(Sophisticated_emerald_upgrade.MODID);
 
-    public static final DeferredRegister<Item> ITEMS =
+    public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(Sophisticated_emerald_upgrade.MODID);
 
     public static final DeferredHolder<Block, BackpackBlock> EMERALD_BACKPACK_BLOCK =
-            BLOCKS.register("emerald_backpack",
-                    () -> new BackpackBlock());
+            BLOCKS.registerBlock(
+                    "emerald_backpack",
+                    BackpackBlock::new
+            );
 
     public static final DeferredHolder<Item, BackpackItem> EMERALD_BACKPACK =
-            ITEMS.register("emerald_backpack",
-                    () -> new BackpackItem(
-                            () -> 132,
-                            () -> 8,
-                            EMERALD_BACKPACK_BLOCK
-                    ));
+            ITEMS.registerItem("emerald_backpack",
+                    properties ->
+                            new BackpackItem(
+                                    () -> 132,
+                                    () -> 8,
+                                    EMERALD_BACKPACK_BLOCK,
+                                    properties
+                            )
+            );
 
-    public static final DeferredHolder<Block, BarrelBlock>
-            EMERALD_BARREL = BLOCKS.register(
+
+    public static final Supplier<BarrelBlock> EMERALD_BARREL =
+            BLOCKS.registerBlock(
                     "emerald_barrel",
-                    () -> new BarrelBlock(
-                            () -> 168,
-                            () -> 7,
-                            0
+                    properties -> new BarrelBlock(
+                            Config.SERVER.netheriteBarrel,
+                            1200,
+                            properties
                     )
             );
 
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_BARREL_ITEM = ITEMS.register(
+    public static final Supplier<BlockItem> EMERALD_BARREL_ITEM =
+            ITEMS.registerItem(
                     "emerald_barrel",
-                    () -> new BarrelBlockItem(
+                    properties -> new BarrelBlockItem(
                             EMERALD_BARREL.get(),
-                            new Item.Properties()
+                            properties.useBlockDescriptionPrefix().fireResistant()
                     )
             );
 
-
-    public static final DeferredHolder<Block, LimitedBarrelBlock>
-            EMERALD_LIMITED_BARREL_1 = BLOCKS.register(
+    public static final Supplier<BarrelBlock> EMERALD_LIMITED_BARREL_1 =
+            BLOCKS.registerBlock(
                     "emerald_limited_barrel_1",
-                    () -> new LimitedBarrelBlock(
+                    properties -> new LimitedBarrelBlock(
                             1,
-                            () -> 128,
-                            () -> 7,
-                            0
+                            Config.SERVER.netheriteLimitedBarrel1,
+                            1200,
+                            properties
                     )
             );
 
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_LIMITED_BARREL_1_ITEM = ITEMS.register(
+    public static final Supplier<BlockItem> EMERALD_LIMITED_BARREL_1_ITEM =
+            ITEMS.registerItem(
                     "emerald_limited_barrel_1",
-                    () -> new BarrelBlockItem(
+                    properties -> new LimitedBarrelBlockItem(
                             EMERALD_LIMITED_BARREL_1.get(),
-                            new Item.Properties()
+                            properties.useBlockDescriptionPrefix().fireResistant()
                     )
             );
 
-    public static final DeferredHolder<Block, LimitedBarrelBlock>
-            EMERALD_LIMITED_BARREL_2 = BLOCKS.register(
-            "emerald_limited_barrel_2",
-            () -> new LimitedBarrelBlock(
-                    2,
-                    () -> 128,
-                    () -> 7,
-                    0
-            )
-    );
-
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_LIMITED_BARREL_2_ITEM = ITEMS.register(
-            "emerald_limited_barrel_2",
-            () -> new BarrelBlockItem(
-                    EMERALD_LIMITED_BARREL_2.get(),
-                    new Item.Properties()
-            )
-    );
-
-
-    public static final DeferredHolder<Block, LimitedBarrelBlock>
-            EMERALD_LIMITED_BARREL_3 = BLOCKS.register(
-            "emerald_limited_barrel_3",
-            () -> new LimitedBarrelBlock(
-                    3,
-                    () -> 128,
-                    () -> 7,
-                    0
-            )
-    );
-
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_LIMITED_BARREL_3_ITEM = ITEMS.register(
-            "emerald_limited_barrel_3",
-            () -> new BarrelBlockItem(
-                    EMERALD_LIMITED_BARREL_3.get(),
-                    new Item.Properties()
-            )
-    );
-
-
-    public static final DeferredHolder<Block, LimitedBarrelBlock>
-            EMERALD_LIMITED_BARREL_4 = BLOCKS.register(
-            "emerald_limited_barrel_4",
-            () -> new LimitedBarrelBlock(
-                    4,
-                    () -> 128,
-                    () -> 7,
-                    0
-            )
-    );
-
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_LIMITED_BARREL_4_ITEM = ITEMS.register(
-            "emerald_limited_barrel_4",
-            () -> new BarrelBlockItem(
-                    EMERALD_LIMITED_BARREL_4.get(),
-                    new Item.Properties()
-            )
-    );
-
-    public static final DeferredHolder<Block, ChestBlock>
-            EMERALD_CHEST = BLOCKS.register(
-                    "emerald_chest",
-                    () -> new ChestBlock(
-                            () -> 168,
-                            () -> 7
+    public static final Supplier<BarrelBlock> EMERALD_LIMITED_BARREL_2 =
+            BLOCKS.registerBlock(
+                    "emerald_limited_barrel_2",
+                    properties -> new LimitedBarrelBlock(
+                            2,
+                            Config.SERVER.netheriteLimitedBarrel2,
+                            1200,
+                            properties
                     )
             );
 
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_CHEST_ITEM = ITEMS.register(
+    public static final Supplier<BlockItem> EMERALD_LIMITED_BARREL_2_ITEM =
+            ITEMS.registerItem(
+                    "emerald_limited_barrel_2",
+                    properties -> new LimitedBarrelBlockItem(
+                            EMERALD_LIMITED_BARREL_2.get(),
+                            properties.useBlockDescriptionPrefix().fireResistant()
+                    )
+            );
+
+    public static final Supplier<BarrelBlock> EMERALD_LIMITED_BARREL_3 =
+            BLOCKS.registerBlock(
+                    "emerald_limited_barrel_3",
+                    properties -> new LimitedBarrelBlock(
+                            3,
+                            Config.SERVER.netheriteLimitedBarrel3,
+                            1200,
+                            properties
+                    )
+            );
+
+    public static final Supplier<BlockItem> EMERALD_LIMITED_BARREL_3_ITEM =
+            ITEMS.registerItem(
+                    "emerald_limited_barrel_3",
+                    properties -> new LimitedBarrelBlockItem(
+                            EMERALD_LIMITED_BARREL_3.get(),
+                            properties.useBlockDescriptionPrefix().fireResistant()
+                    )
+            );
+
+    public static final Supplier<BarrelBlock> EMERALD_LIMITED_BARREL_4 =
+            BLOCKS.registerBlock(
+                    "emerald_limited_barrel_4",
+                    properties -> new LimitedBarrelBlock(
+                            4,
+                            Config.SERVER.netheriteLimitedBarrel4,
+                            1200,
+                            properties
+                    )
+            );
+
+    public static final Supplier<BlockItem> EMERALD_LIMITED_BARREL_4_ITEM =
+            ITEMS.registerItem(
+                    "emerald_limited_barrel_4",
+                    properties -> new LimitedBarrelBlockItem(
+                            EMERALD_LIMITED_BARREL_4.get(),
+                            properties.useBlockDescriptionPrefix().fireResistant()
+                    )
+            );
+
+    public static final Supplier<ChestBlock> EMERALD_CHEST =
+            BLOCKS.registerBlock(
                     "emerald_chest",
-                    () -> new ChestBlockItem(
+                    properties -> new ChestBlock(
+                            Config.SERVER.netheriteChest,
+                            1200,
+                            properties
+                    )
+            );
+
+    public static final Supplier<BlockItem> EMERALD_CHEST_ITEM =
+            ITEMS.registerItem(
+                    "emerald_chest",
+                    properties -> new ChestBlockItem(
                             EMERALD_CHEST.get(),
-                            new Item.Properties()
+                            properties.useBlockDescriptionPrefix().fireResistant()
                     )
             );
 
-
-    public static final DeferredHolder<Block, ShulkerBoxBlock>
-            EMERALD_SHULKER_BOX = BLOCKS.register(
+    public static final Supplier<ShulkerBoxBlock> EMERALD_SHULKER_BOX =
+            BLOCKS.registerBlock(
                     "emerald_shulker_box",
-                    () -> new ShulkerBoxBlock(
-                            () -> 168,
-                            () -> 7
+                    properties -> new ShulkerBoxBlock(
+                            Config.SERVER.netheriteShulkerBox,
+                            1200,
+                            properties
                     )
             );
 
-    public static final DeferredHolder<Item, BlockItem>
-            EMERALD_SHULKER_BOX_ITEM = ITEMS.register(
+    public static final Supplier<BlockItem> EMERALD_SHULKER_BOX_ITEM =
+            ITEMS.registerItem(
                     "emerald_shulker_box",
-                    () -> new ShulkerBoxItem(
+                    properties -> new ShulkerBoxItem(
                             EMERALD_SHULKER_BOX.get(),
-                            new Item.Properties()
+                            properties.useBlockDescriptionPrefix().fireResistant()
                     )
             );
 }

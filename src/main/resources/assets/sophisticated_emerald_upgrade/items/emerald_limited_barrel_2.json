@@ -1,0 +1,17 @@
+{
+    "model": {
+        "type": "sophisticatedstorage:barrel",
+        "flat_top_model": "sophisticated_emerald_upgrade:block/flat/limited_emerald_barrel_2",
+        "model": "sophisticated_emerald_upgrade:block/limited_emerald_barrel_2",
+        "tints": [
+            {
+                "type": "sophisticatedstorage:main",
+                "default": -1
+            },
+            {
+                "type": "sophisticatedstorage:accent",
+                "default": -1
+            }
+        ]
+    }
+}
