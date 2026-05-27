@@ -1,6 +1,7 @@
 package com.reggarf.mods.sophisticated_emerald_upgrade;
 
 import com.mojang.logging.LogUtils;
+import com.reggarf.mods.sophisticated_emerald_upgrade.config.ModConfigs;
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModCreativeModeTabs;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModItems;
@@ -10,10 +11,14 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -27,7 +32,7 @@ public class Sophisticated_emerald_upgrade {
     public static final String MODID = "sophisticated_emerald_upgrade";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    public Sophisticated_emerald_upgrade(IEventBus modEventBus, ModContainer modContainer) {
+    public Sophisticated_emerald_upgrade(IEventBus modEventBus, Dist dist, ModContainer modContainer) {
 
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
@@ -38,8 +43,26 @@ public class Sophisticated_emerald_upgrade {
         ModCompat.BLOCKS.register(modEventBus);
         ModCompat.ITEMS.register(modEventBus);
 
+        modContainer.registerConfig(ModConfig.Type.SERVER, ModConfigs.SPEC,
+                "sophisticated_emerald_upgrade-server.toml"
+        );
+        if (
+                dist == Dist.CLIENT
+                        &&
+                        !ModList.get().isLoaded("configured")
+        ) {
+
+            modContainer.registerExtensionPoint(
+
+                    IConfigScreenFactory.class,
+
+                    ConfigurationScreen::new
+            );
+
     }
-    
+
+    }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }

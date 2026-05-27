@@ -20,5 +20,14 @@
   "block.sophisticated_emerald_upgrade.emerald_limited_barrel_3": "Limited %s%sEmerald Barrel III",
   "block.sophisticated_emerald_upgrade.emerald_limited_barrel_4": "Limited %s%sEmerald Barrel IV",
   "block.sophisticated_emerald_upgrade.emerald_chest": "%s Emerald Chest",
-  "block.sophisticated_emerald_upgrade.emerald_shulker_box": "Emerald Shulker Box"
+  "block.sophisticated_emerald_upgrade.emerald_shulker_box": "Emerald Shulker Box",
+
+  "sophisticatedstorage.configuration.emeraldBarrel": "Emerald Barrel Settings",
+  "sophisticatedstorage.configuration.emeraldLimitedBarrel1": "Emerald Limited Barrel I Settings",
+  "sophisticatedstorage.configuration.emeraldLimitedBarrel2": "Emerald Limited Barrel II Settings",
+  "sophisticatedstorage.configuration.emeraldLimitedBarrel3": "Emerald Limited Barrel III Settings",
+  "sophisticatedstorage.configuration.emeraldLimitedBarrel4": "Emerald Limited Barrel IV Settings",
+  "sophisticatedstorage.configuration.emeraldChest": "Emerald Chest Settings",
+  "sophisticatedstorage.configuration.emeraldShulkerBox": "Emerald Shulker Box Settings"
+
 }
