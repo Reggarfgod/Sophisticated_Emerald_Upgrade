@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:emerald_block",
+  "base": "sophisticatedstorage:netherite_chest",
+  "result": {
+    "id": "sophisticated_emerald_upgrade:emerald_chest"
+  },
+  "template": "sophisticated_emerald_upgrade:emerald_upgrade_template"
+}

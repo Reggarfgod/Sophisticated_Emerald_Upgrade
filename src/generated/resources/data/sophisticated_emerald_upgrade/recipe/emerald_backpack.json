@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:emerald_block",
+  "base": "sophisticatedbackpacks:netherite_backpack",
+  "result": {
+    "id": "sophisticated_emerald_upgrade:emerald_backpack"
+  },
+  "template": "sophisticated_emerald_upgrade:emerald_upgrade_template"
+}

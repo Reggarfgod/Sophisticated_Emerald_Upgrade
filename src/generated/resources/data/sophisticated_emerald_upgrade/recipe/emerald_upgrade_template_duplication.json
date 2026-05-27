@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "item": "minecraft:emerald_block"
-    },
-    "E": {
-      "item": "minecraft:diamond"
-    },
-    "T": {
-      "item": "sophisticated_emerald_upgrade:emerald_upgrade_template"
-    }
+    "D": "minecraft:emerald_block",
+    "E": "minecraft:diamond",
+    "T": "sophisticated_emerald_upgrade:emerald_upgrade_template"
   },
   "pattern": [
     "DED",

@@ -3,6 +3,7 @@ package com.reggarf.mods.sophisticated_emerald_upgrade;
 import com.mojang.logging.LogUtils;
 import com.reggarf.mods.sophisticated_emerald_upgrade.config.ModConfigs;
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
+import com.reggarf.mods.sophisticated_emerald_upgrade.datagen.DataGenerators;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModCreativeModeTabs;
 import com.reggarf.mods.sophisticated_emerald_upgrade.registry.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -59,7 +60,13 @@ public class Sophisticated_emerald_upgrade {
                     ConfigurationScreen::new
             );
 
-    }
+    }     // DATAGEN
+        if (dist == Dist.CLIENT) {
+
+            modEventBus.addListener(
+                    DataGenerators::gatherData
+            );
+        }
 
     }
 

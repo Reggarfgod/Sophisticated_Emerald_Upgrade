@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "sophisticated_emerald_upgrade:stack_upgrade_tier_ss_6",
+  "base": "sophisticated_emerald_upgrade:stack_upgrade_tier_sb_5",
+  "result": {
+    "id": "sophisticated_emerald_upgrade:stack_upgrade_tier_sbs_7"
+  },
+  "template": "sophisticated_emerald_upgrade:emerald_upgrade_template"
+}

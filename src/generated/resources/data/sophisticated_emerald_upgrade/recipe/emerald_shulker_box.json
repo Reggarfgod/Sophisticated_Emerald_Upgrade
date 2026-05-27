@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:emerald_block",
+  "base": "sophisticatedstorage:netherite_shulker_box",
+  "result": {
+    "id": "sophisticated_emerald_upgrade:emerald_shulker_box"
+  },
+  "template": "sophisticated_emerald_upgrade:emerald_upgrade_template"
+}

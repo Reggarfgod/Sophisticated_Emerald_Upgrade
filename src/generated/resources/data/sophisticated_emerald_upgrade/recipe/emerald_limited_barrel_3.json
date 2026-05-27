@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:emerald_block",
+  "base": "sophisticatedstorage:limited_netherite_barrel_3",
+  "result": {
+    "id": "sophisticated_emerald_upgrade:emerald_limited_barrel_3"
+  },
+  "template": "sophisticated_emerald_upgrade:emerald_upgrade_template"
+}

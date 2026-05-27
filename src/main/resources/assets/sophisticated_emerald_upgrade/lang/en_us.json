@@ -7,11 +7,7 @@
   "item.sophisticated_emerald_upgrade.stack_upgrade_tier_ss_6.tooltip": "Multiplies the number of stacks that can fit in a slot by 48",
   "item.sophisticated_emerald_upgrade.stack_upgrade_tier_sbs_7.tooltip": "Multiplies the number of stacks that can fit in a slot by 128 And this stack upgrade work's for both backpacks/storages",
   "item.sophisticated_emerald_upgrade.emerald_upgrade_template": "Emerald Upgrade Template",
-  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.applies_to": "Backpack Upgrades",
-  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.ingredients": "Emerald Materials",
   "item.sophisticated_emerald_upgrade.emerald_upgrade_template.title": "Emerald Upgrade",
-  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.base_slot_description": "Insert Backpack",
-  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.additions_slot_description": "Insert Emerald Material",
   "trim_pattern.sophisticated_emerald_upgrade.emerald": "Rare loot found in Desert Pyramid Chest",
   "item.sophisticated_emerald_upgrade.emerald_backpack": "Emerald Backpack",
   "block.sophisticated_emerald_upgrade.emerald_barrel": "%s Emerald Barrel",
@@ -28,6 +24,21 @@
   "sophisticatedstorage.configuration.emeraldLimitedBarrel3": "Emerald Limited Barrel III Settings",
   "sophisticatedstorage.configuration.emeraldLimitedBarrel4": "Emerald Limited Barrel IV Settings",
   "sophisticatedstorage.configuration.emeraldChest": "Emerald Chest Settings",
-  "sophisticatedstorage.configuration.emeraldShulkerBox": "Emerald Shulker Box Settings"
+  "sophisticatedstorage.configuration.emeraldShulkerBox": "Emerald Shulker Box Settings",
+
+  "item.sophisticated_emerald_upgrade.smithing_template.emerald_upgrade.applies_to": "Netherite Storage Equipment",
+  "item.sophisticated_emerald_upgrade.smithing_template.emerald_upgrade.ingredients": "Emerald Blocks",
+  "item.sophisticated_emerald_upgrade.smithing_template.emerald_upgrade.base_slot_description": "Add Netherite Storage",
+  "item.sophisticated_emerald_upgrade.smithing_template.emerald_upgrade.additions_slot_description": "Add Emerald Block",
+
+  "item.sophisticated_emerald_upgrade.smithing_template.emerald_upgrade.desc": "Can be found in Desert Pyramid chests",
+
+
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.applies_to": "Netherite Storage Equipment",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.ingredients": "Emerald Blocks",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.base_slot_description": "Add Netherite Storage",
+  "item.sophisticated_emerald_upgrade.emerald_upgrade_template.additions_slot_description": "Add Emerald Block",
+
+  "tooltip.sophisticated_emerald_upgrade.emerald_upgrade_template.loot": "Rare loot found in Desert Pyramid Chests"
 
 }
