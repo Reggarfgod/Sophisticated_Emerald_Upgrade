@@ -2,7 +2,7 @@ package com.reggarf.mods.sophisticated_emerald_upgrade.mixin.client.texture;
 
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.model.sprite.SpriteId;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,7 +25,7 @@ public class ShulkerBoxRendererMixin {
     )
     private void sophisticated_emerald_upgrade$getTierMaterial(
             Block block,
-            CallbackInfoReturnable<Material> cir
+            CallbackInfoReturnable<SpriteId> cir
     ) {
 
         if (block != ModCompat.EMERALD_SHULKER_BOX.get()) {
@@ -38,9 +38,9 @@ public class ShulkerBoxRendererMixin {
     }
 
     @Unique
-    private Material sophisticated_emerald_upgrade$getEmeraldMaterial() {
+    private SpriteId sophisticated_emerald_upgrade$getEmeraldMaterial() {
 
-        return new Material(
+        return new SpriteId(
 
                 Sheets.SHULKER_SHEET,
 

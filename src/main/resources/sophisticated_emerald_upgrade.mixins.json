@@ -10,7 +10,7 @@
     "client.ClientBackpackShapeProviderMixin",
     "block.BackpackBlockEntityTypeMixin",
     "curios.CuriosCompatMixin",
-    "color.StorageBlockColorsMixin",
+    "color.StorageBlockColorMixin",
     "block.StorageBlockEntityTypeMixin",
     "client.texture.ChestRendererMixin",
     "client.texture.ShulkerBoxRendererMixin"

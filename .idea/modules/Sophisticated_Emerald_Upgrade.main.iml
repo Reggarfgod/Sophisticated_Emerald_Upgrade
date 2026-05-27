@@ -6,14 +6,15 @@
         <autoDetectTypes>
           <platformType>MIXIN</platformType>
           <platformType>NEOFORGE</platformType>
+          <platformType>MCP</platformType>
         </autoDetectTypes>
         <projectReimportVersion>1</projectReimportVersion>
       </configuration>
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="minecraftVersion" value="1.21.1" />
-    <option name="platformVersion" value="21.1.116" />
+    <option name="minecraftVersion" value="1.26.1.1" />
+    <option name="platformVersion" value="26.1.1.15-beta" />
     <option name="srgType" value="TSRG" />
   </component>
 </module>

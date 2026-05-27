@@ -2,7 +2,7 @@ package com.reggarf.mods.sophisticated_emerald_upgrade.mixin.client.texture;
 
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.model.sprite.SpriteId;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -31,7 +31,7 @@ public class ChestRendererMixin {
     )
     private void sophisticated_emerald_upgrade$getTierMaterial(
             Block block,
-            CallbackInfoReturnable<Material> cir
+            CallbackInfoReturnable<SpriteId> cir
     ) {
 
         if (block != ModCompat.EMERALD_CHEST.get()) {
@@ -44,7 +44,7 @@ public class ChestRendererMixin {
     }
 
     @Unique
-    private Material sophisticated_emerald_upgrade$getEmeraldMaterial() {
+    private SpriteId sophisticated_emerald_upgrade$getEmeraldMaterial() {
 
         String texture;
 
@@ -64,7 +64,7 @@ public class ChestRendererMixin {
                     "entity/chest/emerald_tier";
         }
 
-        return new Material(
+        return new SpriteId(
                 Sheets.CHEST_SHEET,
 
                 Identifier.fromNamespaceAndPath(

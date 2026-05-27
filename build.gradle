@@ -21,7 +21,7 @@ base {
     archivesName = mod_id
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     // Specify the version of NeoForge to use.
@@ -104,18 +104,16 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
 
     //sophisticated core
-    implementation "curse.maven:sophisticated-core-618298:8145739"
-
+    implementation "curse.maven:sophisticated-core-618298:7932836"
     // sophisticated backpack
-    implementation "curse.maven:sophisticated-backpacks-422301:8136846"
+    implementation "curse.maven:sophisticated-backpacks-422301:7947613"
     //sophisticated storage
-    implementation "curse.maven:sophisticated-storage-619320:8137313"
+    implementation "curse.maven:sophisticated-storage-619320:7932856"
 
     // curios
-    implementation "curse.maven:curios-309927:7642217"
-
+    implementation "curse.maven:curios-309927:7925547"
     // jei
-    implementation "curse.maven:jei-238222:7850285"
+    implementation "curse.maven:jei-238222:7884734"
 
 }
 

@@ -3,7 +3,7 @@ package com.reggarf.mods.sophisticated_emerald_upgrade.mixin.item;
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.EmeraldBackpackCauldronInteraction;
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.EmeraldBackpackDispenseBehavior;
 import com.reggarf.mods.sophisticated_emerald_upgrade.compat.ModCompat;
-import net.minecraft.core.cauldron.CauldronInteraction;
+import net.minecraft.core.cauldron.CauldronInteractions;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,7 +26,7 @@ public class ModItemsMixin {
     @Inject(method = "registerCauldronInteractions", at = @At("TAIL"))
     private static void emeraldBackpackCauldron(CallbackInfo ci) {
 
-        CauldronInteraction.WATER.map().put(
+        CauldronInteractions.WATER.put(
                 ModCompat.EMERALD_BACKPACK.get(),
                 new EmeraldBackpackCauldronInteraction()
         );
