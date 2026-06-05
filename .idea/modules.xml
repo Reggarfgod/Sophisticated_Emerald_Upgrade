@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sophisticated_Emerald_Upgrade.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Sophisticated_Emerald_Upgrade.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sophisticated_Emerald_Upgrade.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Sophisticated_Emerald_Upgrade.test.iml" />
     </modules>
   </component>
 </project>

@@ -22,42 +22,39 @@ public class StorageBlockEntityTypeMixin {
     ) {
 
         if (
-
-                state.getBlock() ==
-                        ModCompat.EMERALD_BARREL.get()
-
-                        ||
-
-                        state.getBlock() ==
-                                ModCompat.EMERALD_LIMITED_BARREL_1.get()
+                (ModCompat.EMERALD_BARREL.isBound()
+                        && state.getBlock() == ModCompat.EMERALD_BARREL.get())
 
                         ||
 
-                        state.getBlock() ==
-                                ModCompat.EMERALD_LIMITED_BARREL_2.get()
+                        (ModCompat.EMERALD_LIMITED_BARREL_1.isBound()
+                                && state.getBlock() == ModCompat.EMERALD_LIMITED_BARREL_1.get())
 
                         ||
 
-                        state.getBlock() ==
-                                ModCompat.EMERALD_LIMITED_BARREL_3.get()
+                        (ModCompat.EMERALD_LIMITED_BARREL_2.isBound()
+                                && state.getBlock() == ModCompat.EMERALD_LIMITED_BARREL_2.get())
 
                         ||
 
-                        state.getBlock() ==
-                                ModCompat.EMERALD_LIMITED_BARREL_4.get()
+                        (ModCompat.EMERALD_LIMITED_BARREL_3.isBound()
+                                && state.getBlock() == ModCompat.EMERALD_LIMITED_BARREL_3.get())
 
                         ||
 
-                        state.getBlock() ==
-                                ModCompat.EMERALD_CHEST.get()
+                        (ModCompat.EMERALD_LIMITED_BARREL_4.isBound()
+                                && state.getBlock() == ModCompat.EMERALD_LIMITED_BARREL_4.get())
 
                         ||
 
-                        state.getBlock() ==
-                                ModCompat.EMERALD_SHULKER_BOX.get()
+                        (ModCompat.EMERALD_CHEST.isBound()
+                                && state.getBlock() == ModCompat.EMERALD_CHEST.get())
 
+                        ||
+
+                        (ModCompat.EMERALD_SHULKER_BOX.isBound()
+                                && state.getBlock() == ModCompat.EMERALD_SHULKER_BOX.get())
         ) {
-
             cir.setReturnValue(true);
         }
     }
