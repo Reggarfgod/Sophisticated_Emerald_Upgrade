@@ -8,10 +8,8 @@
     "color.ModBlockColorsMixin",
     "item.ModItemsMixin",
     "client.ClientBackpackShapeProviderMixin",
-    "block.BackpackBlockEntityTypeMixin",
     "curios.CuriosCompatMixin",
     "color.StorageBlockColorsMixin",
-    "block.StorageBlockEntityTypeMixin",
     "client.texture.ChestRendererMixin",
     "client.texture.ShulkerBoxRendererMixin"
   ],
