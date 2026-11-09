@@ -10,13 +10,11 @@
     "item.ModItemsMixin",
     "client.ClientBackpackShapeProviderMixin",
     "client.ClientEventHandlerMixin",
-    "block.BackpackBlockEntityTypeMixin",
     "curios.CuriosCompatClientMixin",
     "curios.CuriosCompatMixin",
     "curios.BackpackCurioRendererMixin",
     "color.StorageItemColorsMixin",
     "color.StorageBlockColorsMixin",
-    "block.StorageBlockEntityTypeMixin",
     "render.EmeraldClientRenderMixin",
     "client.texture.ChestRendererMixin",
     "client.texture.ShulkerBoxRendererMixin"

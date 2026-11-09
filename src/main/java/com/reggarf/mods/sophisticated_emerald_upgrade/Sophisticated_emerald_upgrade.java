@@ -14,10 +14,17 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.items.wrapper.EmptyItemHandler;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlockEntity;
+import net.p3pp3rf1y.sophisticatedbackpacks.backpack.wrapper.BackpackWrapper;
+import net.p3pp3rf1y.sophisticatedstorage.block.StorageBlockEntity;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -27,6 +34,7 @@ public class Sophisticated_emerald_upgrade {
     public static final String MODID = "sophisticated_emerald_upgrade";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+
     public Sophisticated_emerald_upgrade(IEventBus modEventBus, ModContainer modContainer) {
 
         modEventBus.addListener(this::commonSetup);
@@ -38,7 +46,124 @@ public class Sophisticated_emerald_upgrade {
         ModCompat.BLOCKS.register(modEventBus);
         ModCompat.ITEMS.register(modEventBus);
 
+        modEventBus.addListener(this::onBlockEntityTypeAddBlocks);
+        modEventBus.addListener(this::registerCapabilities);
+
     }
+
+    private void onBlockEntityTypeAddBlocks(BlockEntityTypeAddBlocksEvent event) {
+        event.modify(
+                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.BARREL_BLOCK_ENTITY_TYPE.get(),
+                ModCompat.EMERALD_BARREL.get()
+        );
+        event.modify(
+                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_BARREL_BLOCK_ENTITY_TYPE.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_1.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_2.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_3.get(),
+                ModCompat.EMERALD_LIMITED_BARREL_4.get()
+        );
+        event.modify(
+                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.CHEST_BLOCK_ENTITY_TYPE.get(),
+                ModCompat.EMERALD_CHEST.get()
+        );
+        event.modify(
+                net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.SHULKER_BOX_BLOCK_ENTITY_TYPE.get(),
+                ModCompat.EMERALD_SHULKER_BOX.get()
+        );
+        event.modify(
+                net.p3pp3rf1y.sophisticatedbackpacks.init.ModBlocks.BACKPACK_TILE_TYPE.get(),
+                ModCompat.EMERALD_BACKPACK_BLOCK.get()
+        );
+    }
+
+    private void registerCapabilities(RegisterCapabilitiesEvent event) {
+        // Register emerald backpack item capabilities (since items are registered per ItemLike, not BlockEntityType)
+        event.registerItem(
+                Capabilities.ItemHandler.ITEM,
+                (stack, context) -> {
+                    var wrapper = BackpackWrapper.fromStack(stack);
+                    if (wrapper.getContentsUuid().isEmpty()) {
+                        return EmptyItemHandler.INSTANCE;
+                    }
+                    return wrapper.getInventoryForInputOutput();
+                },
+                ModCompat.EMERALD_BACKPACK.get()
+        );
+        event.registerItem(
+                Capabilities.FluidHandler.ITEM,
+                (stack, context) -> {
+                    if (!net.p3pp3rf1y.sophisticatedbackpacks.Config.SERVER.itemFluidHandlerEnabled.get()) {
+                        return null;
+                    }
+                    return BackpackWrapper.getCapabilityFluidHandler(stack).orElse(null);
+                },
+                ModCompat.EMERALD_BACKPACK.get()
+        );
+        event.registerItem(
+                Capabilities.EnergyStorage.ITEM,
+                (stack, context) -> {
+                    var wrapper = BackpackWrapper.fromStack(stack);
+                    return wrapper.getEnergyStorage().orElse(null);
+                },
+                ModCompat.EMERALD_BACKPACK.get()
+        );
+
+        // Fallback block capability registrations in case parent mods haven't bound them
+        if (!event.isBlockRegistered(Capabilities.ItemHandler.BLOCK, ModCompat.EMERALD_BARREL.get())) {
+            event.registerBlock(
+                    Capabilities.ItemHandler.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof StorageBlockEntity storageBe ? storageBe.getExternalItemHandler(side) : null,
+                    ModCompat.EMERALD_BARREL.get()
+            );
+        }
+        if (!event.isBlockRegistered(Capabilities.ItemHandler.BLOCK, ModCompat.EMERALD_LIMITED_BARREL_1.get())) {
+            event.registerBlock(
+                    Capabilities.ItemHandler.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof StorageBlockEntity storageBe ? storageBe.getExternalItemHandler(side) : null,
+                    ModCompat.EMERALD_LIMITED_BARREL_1.get(),
+                    ModCompat.EMERALD_LIMITED_BARREL_2.get(),
+                    ModCompat.EMERALD_LIMITED_BARREL_3.get(),
+                    ModCompat.EMERALD_LIMITED_BARREL_4.get()
+            );
+        }
+        if (!event.isBlockRegistered(Capabilities.ItemHandler.BLOCK, ModCompat.EMERALD_CHEST.get())) {
+            event.registerBlock(
+                    Capabilities.ItemHandler.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof StorageBlockEntity storageBe ? storageBe.getExternalItemHandler(side) : null,
+                    ModCompat.EMERALD_CHEST.get()
+            );
+        }
+        if (!event.isBlockRegistered(Capabilities.ItemHandler.BLOCK, ModCompat.EMERALD_SHULKER_BOX.get())) {
+            event.registerBlock(
+                    Capabilities.ItemHandler.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof StorageBlockEntity storageBe ? storageBe.getExternalItemHandler(side) : null,
+                    ModCompat.EMERALD_SHULKER_BOX.get()
+            );
+        }
+        if (!event.isBlockRegistered(Capabilities.ItemHandler.BLOCK, ModCompat.EMERALD_BACKPACK_BLOCK.get())) {
+            event.registerBlock(
+                    Capabilities.ItemHandler.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof BackpackBlockEntity backpackBe ? backpackBe.getExternalItemHandler(side) : null,
+                    ModCompat.EMERALD_BACKPACK_BLOCK.get()
+            );
+        }
+        if (!event.isBlockRegistered(Capabilities.FluidHandler.BLOCK, ModCompat.EMERALD_BACKPACK_BLOCK.get())) {
+            event.registerBlock(
+                    Capabilities.FluidHandler.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof BackpackBlockEntity backpackBe ? backpackBe.getExternalFluidHandler(side) : null,
+                    ModCompat.EMERALD_BACKPACK_BLOCK.get()
+            );
+        }
+        if (!event.isBlockRegistered(Capabilities.EnergyStorage.BLOCK, ModCompat.EMERALD_BACKPACK_BLOCK.get())) {
+            event.registerBlock(
+                    Capabilities.EnergyStorage.BLOCK,
+                    (level, pos, state, be, side) -> be instanceof BackpackBlockEntity backpackBe ? backpackBe.getExternalEnergyStorage(side) : null,
+                    ModCompat.EMERALD_BACKPACK_BLOCK.get()
+            );
+        }
+    }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
@@ -53,7 +178,7 @@ public class Sophisticated_emerald_upgrade {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
